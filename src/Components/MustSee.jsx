@@ -1,7 +1,18 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import { Row, Container, Col, Card } from 'react-bootstrap'
+import newsAxiosInstance from '../newsAxiosInstance';
+import { Link } from 'react-router-dom';
 
-function MustSee() {
+function MustSee({url}) {
+  const [mustSee, setMustSee] = useState([])
+  const fetchData = async() => {
+    const {data} = await newsAxiosInstance.get(url)
+    setMustSee(data)
+  }
+  useEffect(() => {
+    fetchData()
+  }, [])
+
   return (
     <>
       <Container className='mt-4 mb-5'>
@@ -16,8 +27,9 @@ function MustSee() {
 
         <Row className='mt-2'>
           <Col sm={5}>
-            <img src="https://www.livemint.com/lm-img/img/2023/10/01/600x338/im-860353_1696145716374_1696145987056.jpg" alt="" className='img-fluid' />
-            <h2 className='fw-bold mt-1'>Lorem ipsum dolor sit, amet consectetur adipisicing elit.</h2>
+          <Link to={`${mustSee.articles && mustSee.articles[0].url}`} target="_blank" style={{color:"black", textDecoration:"none"}} className='link-hover'>
+            <img src={`${mustSee.articles && mustSee.articles[0].urlToImage?mustSee.articles[0].urlToImage:'https://static.files.bbci.co.uk/ws/simorgh-assets/public/news/images/metadata/poster-1024x576.png'}`} alt="" className='img-fluid' />
+            <h2 className='fw-bold mt-1'>{`${mustSee.articles && mustSee.articles[0].title}`}</h2></Link>
           </Col>
 
           <Col>
@@ -36,7 +48,7 @@ function MustSee() {
                   <Card className='rounded-0 border-0 mb-1'>
                   <Card.Header as="h5" className='fw-semibold bg-dark text-light rounded-0 border-0'>Listen live</Card.Header>
                   <Card.Body className='rounded-0' style={{backgroundColor:'#f8e7e6'}}>
-                    <Card.Title className='fw-semibold m-0'>BBC World service radio</Card.Title>
+                    <Card.Text className='fw-semibold m-0'>BBC World service radio</Card.Text>
                     <Card.Text>
                       Listen to the stories
                     </Card.Text>
@@ -46,18 +58,22 @@ function MustSee() {
 
               <Col sm={4}>
                 <Card className='rounded-0 mb-2 border-0'>
-                  <Card.Img variant="top" className='rounded-0' src="https://www.livemint.com/lm-img/img/2023/10/01/600x338/im-860353_1696145716374_1696145987056.jpg" />
+                  <Card.Img variant="top" className='rounded-0' src={`${mustSee.articles && mustSee.articles[1].urlToImage?mustSee.articles[1].urlToImage:'https://static.files.bbci.co.uk/ws/simorgh-assets/public/news/images/metadata/poster-1024x576.png'}`} />
                   <Card.Body className='p-0 pt-1'>
-                    <Card.Title className='fw-semibold'>Lorem ipsum dolor sit, amet consectetur</Card.Title>
+                    <Card.Title className='fw-semibold'>
+                    <Link to={`${mustSee.articles && mustSee.articles[1].url}`} target="_blank" style={{color:"black", textDecoration:"none"}} className='link-hover'>
+                      {`${mustSee.articles && mustSee.articles[1].title}`}</Link></Card.Title>
                   </Card.Body>
                 </Card>
               </Col>
 
               <Col sm={4}>
                 <Card className='rounded-0 mb-2 border-0'>
-                  <Card.Img variant="top" className='rounded-0' src="https://www.livemint.com/lm-img/img/2023/10/01/600x338/im-860353_1696145716374_1696145987056.jpg" />
+                  <Card.Img variant="top" className='rounded-0' src={`${mustSee.articles && mustSee.articles[2].urlToImage?mustSee.articles[2].urlToImage:'https://static.files.bbci.co.uk/ws/simorgh-assets/public/news/images/metadata/poster-1024x576.png'}`} />
                   <Card.Body className='p-0 pt-1'>
-                    <Card.Title className='fw-semibold'>Lorem ipsum dolor sit, amet consectetur</Card.Title>
+                    <Card.Title className='fw-semibold'>
+                    <Link to={`${mustSee.articles && mustSee.articles[2].url}`} target="_blank" style={{color:"black", textDecoration:"none"}} className='link-hover'>
+                      {`${mustSee.articles && mustSee.articles[2].title}`}</Link></Card.Title>
                   </Card.Body>
                 </Card>
               </Col>
@@ -66,27 +82,35 @@ function MustSee() {
             <Row>
               <Col sm={4}>
                 <Card className='rounded-0 mb-2 border-0'>
-                  <Card.Img variant="top" className='rounded-0' src="https://www.livemint.com/lm-img/img/2023/10/01/600x338/im-860353_1696145716374_1696145987056.jpg" />
+                  <Card.Img variant="top" className='rounded-0' src={`${mustSee.articles && mustSee.articles[3].urlToImage?mustSee.articles[3].urlToImage:'https://static.files.bbci.co.uk/ws/simorgh-assets/public/news/images/metadata/poster-1024x576.png'}`} />
                   <Card.Body className='p-0 pt-1'>
-                    <Card.Title className='fw-semibold'>Lorem ipsum dolor sit, amet consectetur</Card.Title>
+                    <Card.Title className='fw-semibold'>
+                    <Link to={`${mustSee.articles && mustSee.articles[3].url}`} target="_blank" style={{color:"black", textDecoration:"none"}} className='link-hover'>
+                      {`${mustSee.articles && mustSee.articles[3].title}`}</Link></Card.Title>
                   </Card.Body>
                 </Card>
               </Col>
 
               <Col sm={4}>
                 <Card className='rounded-0 mb-2 border-0'>
-                  <Card.Img variant="top" className='rounded-0' src="https://www.livemint.com/lm-img/img/2023/10/01/600x338/im-860353_1696145716374_1696145987056.jpg" />
+                  <Card.Img variant="top" className='rounded-0' src={`${mustSee.articles && mustSee.articles[4].urlToImage?mustSee.articles[4].urlToImage:'https://static.files.bbci.co.uk/ws/simorgh-assets/public/news/images/metadata/poster-1024x576.png'}`} />
                   <Card.Body className='p-0 pt-1'>
-                    <Card.Title className='fw-semibold'>Lorem ipsum dolor sit, amet consectetur</Card.Title>
+                    <Card.Title className='fw-semibold'>
+                    <Link to={`${mustSee.articles && mustSee.articles[4].url}`} target="_blank" style={{color:"black", textDecoration:"none"}} className='link-hover'>
+                      {`${mustSee.articles && mustSee.articles[4].title}`}</Link></Card.Title>
                   </Card.Body>
                 </Card>
               </Col>
 
               <Col sm={4}>
                 <Card className='rounded-0 mb-2 border-0'>
-                  <Card.Img variant="top" className='rounded-0' src="https://www.livemint.com/lm-img/img/2023/10/01/600x338/im-860353_1696145716374_1696145987056.jpg" />
+                  <Card.Img variant="top" className='rounded-0' src={`${mustSee.articles && mustSee.articles[5].urlToImage?mustSee.articles[5].urlToImage:'https://static.files.bbci.co.uk/ws/simorgh-assets/public/news/images/metadata/poster-1024x576.png'}`} />
                   <Card.Body className='p-0 pt-1'>
-                    <Card.Title className='fw-semibold'>Lorem ipsum dolor sit, amet consectetur</Card.Title>
+                    <Card.Title className='fw-semibold'>
+                    <Link to={`${mustSee.articles && mustSee.articles[5].url}`} target="_blank" style={{color:"black", textDecoration:"none"}} className='link-hover'>
+
+                      {`${mustSee.articles && mustSee.articles[5].title}`}
+                      </Link></Card.Title>
                   </Card.Body>
                 </Card>
               </Col>

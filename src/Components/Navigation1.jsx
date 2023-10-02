@@ -1,8 +1,16 @@
-import React from 'react'
+import React, { useState } from 'react'
 import './Navigation1.css'
 import { Navbar, Nav, Container, Form, Button } from 'react-bootstrap'
+import { Link } from 'react-router-dom'
 
 function Navigation1() {
+    const [formData, setFormData] = useState()
+    const handleForm = (e) => {
+        e.preventDefault()
+        const data = e.target.value
+        setFormData(data)
+    }
+    
     return (
         <>
             <Navbar expand="lg" className="nav">
@@ -27,8 +35,9 @@ function Navigation1() {
                         placeholder="Search BBC"
                         className="me-2"
                         aria-label="Search"
+                        onChange={handleForm}
                         />
-                        <Button variant="outline-success" className='rounded-0'>Search</Button>
+                        <Link to={`/search?query=${formData}`}><Button variant="outline-success" className='rounded-0' type='submit'>Search</Button></Link>
                     </Form>
                     </Navbar.Collapse>
                 </Container>
@@ -38,3 +47,4 @@ function Navigation1() {
 }
 
 export default Navigation1
+

@@ -1,0 +1,10 @@
+apiKey = "1000852ce8b94082b7e8af7a06f3d466"
+
+fetchHeadline = "https://newsapi.org/v2/top-headlines?country=in&apiKey=1000852ce8b94082b7e8af7a06f3d466"
+searchNews = "https://newsapi.org/v2/everything?q=india&from=2023-10-01&sortBy=popularity&apiKey=1000852ce8b94082b7e8af7a06f3d466"
+fetchMustSee = "https://newsapi.org/v2/top-headlines?sources=bbc-news&apiKey=1000852ce8b94082b7e8af7a06f3d466"
+fetchFullStory = "https://newsapi.org/v2/top-headlines?country=in&category=nation&apiKey=1000852ce8b94082b7e8af7a06f3d466"
+fetchMostRead = "https://newsapi.org/v2/top-headlines?country=in&category=general&apiKey=1000852ce8b94082b7e8af7a06f3d466"
+fetchAroundBBC = "https://newsapi.org/v2/everything?sources=bbc-news&apiKey=1000852ce8b94082b7e8af7a06f3d466"
+
+https://newsapi.org/v2/top-headlines?sources=bbc-news&apiKey=1000852ce8b94082b7e8af7a06f3d466

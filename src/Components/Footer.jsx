@@ -22,12 +22,12 @@ function Footer() {
           </Col>
 
           <Col sm={3}>
-            <h4><i class="fa-solid fa-envelope-open-text"></i> NEWS DAILY</h4>
+            <h4><i className="fa-solid fa-envelope-open-text"></i> NEWS DAILY</h4>
             <p>Get news from the BBC in your inbox each weekday morning</p>
           </Col>
 
           <Col sm={3}>
-            <h4><i class="fa-solid fa-mobile-screen-button"></i> NEWS APP</h4>
+            <h4><i className="fa-solid fa-mobile-screen-button"></i> NEWS APP</h4>
             <p>Find out more about our BBC News App</p>
           </Col>
 
@@ -42,37 +42,37 @@ function Footer() {
         <h1 className='fw-bold'>Explore the BBC</h1>
         <Row className='mt-4 mb-4'>
           <Col sm={3}>
-            <p className='m-0'>Home</p>
-            <p className='m-0'>Future</p>
+            <p className='m-0 text-light'>Home</p>
+            <p className='m-0 text-light'>Future</p>
           </Col>
           <Col sm={3}>
-            <p className='m-0'>News</p>
-            <p className='m-0'>Culture</p>
-          </Col>
-
-          <Col sm={3}>
-            <p className='m-0'>Sport</p>
-            <p className='m-0'>TV</p>
+            <p className='m-0 text-light'>News</p>
+            <p className='m-0 text-light'>Culture</p>
           </Col>
 
           <Col sm={3}>
-            <p className='m-0'>Reel</p>
-            <p className='m-0'>Weather</p>
+            <p className='m-0 text-light'>Sport</p>
+            <p className='m-0 text-light'>TV</p>
+          </Col>
+
+          <Col sm={3}>
+            <p className='m-0 text-light'>Reel</p>
+            <p className='m-0 text-light'>Weather</p>
           </Col>
         </Row>
-        <p className='text-center fw-semibold'>
-          <span className='m-2'>Terms of Use</span>
-          <span className='m-2'>About the BBC</span>
-          <span className='m-2'>Privacy Policy</span>
-          <span className='m-2'>Cookies</span>
-          <span className='m-2'>Accessibility Help</span>
-          <span className='m-2'>Parental Guidance</span>
-          <span className='m-2'>Contact the BBC</span>
-          <span className='m-2'>BBC emails for you</span>
-          <span className='m-2'>Advertise with us</span>
-          <span className='m-2'>Do not share or sell my info</span>
+        <p className='text-center fw-semibold text-light'>
+          <span className='m-2 text-light'>Terms of Use</span>
+          <span className='m-2 text-light'>About the BBC</span>
+          <span className='m-2 text-light'>Privacy Policy</span>
+          <span className='m-2 text-light'>Cookies</span>
+          <span className='m-2 text-light'>Accessibility Help</span>
+          <span className='m-2 text-light'>Parental Guidance</span>
+          <span className='m-2 text-light'>Contact the BBC</span>
+          <span className='m-2 text-light'>BBC emails for you</span>
+          <span className='m-2 text-light'>Advertise with us</span>
+          <span className='m-2 text-light'>Do not share or sell my info</span>
         </p>
-        <p className='text-center' style={{fontSize:'small'}}>Copyright © 2023 BBC. The BBC is not responsible for the content of external sites. Read about our approach to external linking.</p>
+        <p className='text-center text-light' style={{fontSize:'small'}}>Copyright © 2023 BBC. The BBC is not responsible for the content of external sites. Read about our approach to external linking.</p>
       </div>
     </>
   )
